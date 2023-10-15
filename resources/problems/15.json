@@ -1,0 +1,6 @@
+{
+    "id": 15,
+    "title": "完全な例",
+    "theme": "アクティビティ図",
+    "uml": "@startuml\nstart\n:ClickServlet.handleRequest();\n:new page;\nif (Page.onSecurityCheck) then (true)\n:Page.onInit();\nif (isForward?) then (no)\n:Process controls;\nif (continue processing?) then (no)\nstop\nendif\nif (isPost?) then (yes)\n:Page.onPost();\nelse (no)\n:Page.onGet();\nendif\n:Page.onRender();\nendif\nelse (false)\nendif\nif (do redirect?) then (yes)\n:redirect process;\nelse\nif (do forward?) then (yes)\n:Forward request;\nelse (no)\n:Render page template;\nendif\nendif\nstop\n@enduml"
+}

@@ -1,0 +1,6 @@
+{
+    "id": 8,
+    "title": "ユースケースの説明",
+    "theme": "ユースケース図",
+    "uml": "@startuml\nusecase UC1 as \"You can use\nseveral lines to define your usecase.\nYou can also use separators.\n--\nSeveral separators are possible.\n==\nAnd you can add titles:\n..Conclusion..\nThis allows large description.\"\n@enduml"
+}

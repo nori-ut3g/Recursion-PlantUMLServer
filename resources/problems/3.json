@@ -1,0 +1,6 @@
+{
+    "id": 3,
+    "title": "矢印の見た目を変える",
+    "theme": "シーケンス図",
+    "uml": "@startuml\nBob ->x Alice\nBob -> Alice\nBob ->> Alice\nBob -\\ Alice\nBob \\\\- Alice\nBob //-- Alice\nBob ->o Alice\nBob o\\\\-- Alice\nBob <-> Alice\nBob <->o Alice\n@enduml"
+}

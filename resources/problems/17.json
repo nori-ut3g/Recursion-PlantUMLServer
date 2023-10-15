@@ -1,0 +1,6 @@
+{
+    "id": 17,
+    "title": "パッケージ",
+    "theme": "配置図",
+    "uml": "@startuml\nartifact アーティファクト {\ncard カード {\ncloud クラウド {\ncomponent コンポーネント {\ndatabase データベース {\nfile ファイル {\nfolder フォルダ {\nframe フレーム {\nhexagon 六角形 {\nnode ノード {\npackage パッケージ {\nqueue キュー {\nrectangle 四角形 {\nstack スタック {\nstorage ストレージ {\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n}\n@enduml"
+}

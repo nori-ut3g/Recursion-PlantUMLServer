@@ -1,0 +1,6 @@
+{
+    "id": 14,
+    "title": "スイムレーン",
+    "theme": "アクティビティ図",
+    "uml": "@startuml\n|#pink|Actor_For_red|\nstart\nif (color?) is (red) then\n#pink:**action red**;\n:foo1;\nelse (not red)\n|#lightgray|Actor_For_no_red|\n#lightgray:**action not red**;\n:foo2;\nendif\n|Next_Actor|\n#lightblue:foo3;\n:foo4;\n|Final_Actor|\n#palegreen:foo5;\nstop\n@enduml"
+}

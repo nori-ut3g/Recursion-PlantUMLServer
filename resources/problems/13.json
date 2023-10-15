@@ -1,0 +1,6 @@
+{
+    "id": 13,
+    "title": "repeat 節を中断する ",
+    "theme": "アクティビティ図",
+    "uml": "@startuml\nstart\nrepeat\n:Test something;\nif (Something went wrong?) then (no)\n#palegreen:OK;\nbreak\nendif\n->NOK;\n:Alert \"Error with long text\";\nrepeat while (Something went wrong with long text?) is (yes) not (no)\n->//merged step//;\n:Alert \"Sucess\";\nstop\n@enduml"
+}

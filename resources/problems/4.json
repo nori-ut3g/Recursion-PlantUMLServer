@@ -1,0 +1,6 @@
+{
+    "id": 4,
+    "title": "すべての分類子にまたがるノート",
+    "theme": "シーケンス図",
+    "uml": "@startuml\nAlice->Bob:m1\nBob->Charlie:m2\nnote over Alice, Charlie: Old method for note over all part. with:\\n \"\"note over //FirstPart, LastParnote across: New method with:\\n\"\"note across\"\"\nBob->Alice\nhnote across:Note across all part.\n@enduml"
+}

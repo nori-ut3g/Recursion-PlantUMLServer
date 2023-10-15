@@ -1,0 +1,6 @@
+{
+    "id": 12,
+    "title": "クラスの色とスタイルを変更する",
+    "theme": "クラス図",
+    "uml": "@startuml\nclass bar #line:green;back:lightblue\nclass bar2 #lightblue;line:green\nclass Foo1 #back:red;line:00FFFF\nclass FooDashed #line.dashed:blue\nclass FooDotted #line.dotted:blue\nclass FooBold #line.bold\nclass Demo1 #back:lightgreen|yellow;header:blue/red\n@enduml"
+}

@@ -1,0 +1,6 @@
+{
+    "id": 7,
+    "title": "スキンパラメータ",
+    "theme": "シーケンス図",
+    "uml": "@startuml\nskinparam backgroundColor #EEEBDC\nskinparam handwritten true\nskinparam sequence {\nArrowColor DeepSkyBlue\nActorBorderColor DeepSkyBlue\nLifeLineBorderColor blue\nLifeLineBackgroundColor #A9DCDF\nParticipantBorderColor DeepSkyBlue\nParticipantBackgroundColor DodgerBlue\nParticipantFontName Impact\nParticipantFontSize 17\nParticipantFontColor #A9DCDF\nActorBackgroundColor aqua\nActorFontColor DeepSkyBlue\nActorFontSize 17\nActorFontName Aapex\n}\nactor User\nparticipant \"First Class\" as A\nparticipant \"Second Class\" as B\nparticipant \"Last Class\" as C\nUser -> A: DoWork\nactivate A\nA -> B: Create Request\nactivate B\nB -> C: DoWork\nactivate C\nC --> B: WorkDone\ndestroy C\nB --> A: Request Created\ndeactivate B\nA --> User: Done\ndeactivate A\n@enduml"
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMLConvertor</title>
+  <link rel="stylesheet" href="node_modules/monaco-editor/min/vs/editor/editor.main.css">
+</head>
+<body>
+<div style="display: flex;">
+  <div id="editor-container" style="width: 50%; height: 600px; border: 1px solid grey">
+  </div>
+
+  <div style="width: 50%; height: 600px; border: 1px solid grey; overflow: auto;">
+    <div id="preview" style="display: none;"></div>
+  </div>
+</div>
+
+<script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+<script>
+  let editor;
+  require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs' }});
+  require(['vs/editor/editor.main'], function() {
+    editor = monaco.editor.create(document.getElementById('editor-container'), {
+      value: '@startuml\n' +
+              'skinparam {\n' +
+              '    monochrome true\n' +
+              '    padding 2\n' +
+              '}\n' +
+              'title PlantUMLを使う\n' +
+              '|ユーザー|\n' +
+              'start\n' +
+              ':VSCodeをダウンロードする;\n' +
+              ':VSCodeをインストールする;\n' +
+              ':PlantUMLのプラグインを入れる;\n' +
+              'if (なんか難しそうに感じる) then (とりあえずやってみる)\n' +
+              '    :できそうな気がしてくる;\n' +
+              'else (やっぱりやめる)\n' +
+              '    stop\n' +
+              'endif\n' +
+              'if (遅すぎてイライラしてくる) then (速くする方法を探してみる)\n' +
+              'else (やっぱりやめる)\n' +
+              '    stop\n' +
+              'endif\n' +
+              'partition VSCodeの設定 {\n' +
+              '    if (Serverの設定をする) then (する)\n' +
+              '        :描画の速さに感動する;\n' +
+              '    else (しない)\n' +
+              '        :遅すぎて諦める;\n' +
+              '        stop\n' +
+              '    endif\n' +
+              '}\n' +
+              'if (デザインが気になってくる) then (変えてみる)\n' +
+              '    :いい感じに設計ができた気になる;\n' +
+              'else (変えるのが面倒)\n' +
+              '    :諦める;\n' +
+              '    stop\n' +
+              'endif\n' +
+              ':おめでとうございます;\n' +
+              'stop\n' +
+              '@enduml',
+      language: 'plaintext'
+    });
+
+    const debouncedUpdate = debounce(updatePreview, 500);
+    editor.onDidChangeModelContent(function() {
+      debouncedUpdate(editor.getValue());
+    });
+
+    updatePreview(editor.getValue());
+  });
+
+  function updatePreview(umlCode) {
+    fetch('api.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `uml=${encodeURIComponent(umlCode)}`
+    })
+            .then(response => response.text())
+            .then(svgContent => {
+              const previewDiv = document.getElementById('preview');
+              previewDiv.innerHTML = svgContent;
+              previewDiv.style.display = 'block';
+            })
+            .catch(error => {
+              console.error("There was an error:", error);
+            });
+  }
+
+  function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+      const context = this;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  }
+
+</script>
+
+</body>
+</html>

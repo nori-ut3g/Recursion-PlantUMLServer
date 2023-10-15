@@ -1,0 +1,6 @@
+{
+    "id": 9,
+    "title": "ノートの使用方法",
+    "theme": "ユースケース図",
+    "uml": "@startuml\n:Main Admin: as Admin\n(Use the application) as (Use)\nUser -> (Start)\nUser --> (Use)\nAdmin ---> (Use)\nnote right of Admin : This is an example.\nnote right of (Use)\nA note can also\nbe on several lines\nend note\nnote \"This note is connected\\nto several objects.\" as N2\n(Start) .. N2\nN2 .. (Use)\n@enduml"
+}

@@ -1,0 +1,6 @@
+{
+    "id": 6,
+    "title": "分類子の囲み",
+    "theme": "シーケンス図",
+    "uml": "@startuml\nbox \"Internal Service\" #LightBlue\nparticipant Bob\nparticipant Alice\nend box\nparticipant Other\nBob -> Alice : hello\nAlice -> Other : hello\n@enduml"
+}

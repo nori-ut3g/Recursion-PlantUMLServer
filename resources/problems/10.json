@@ -1,0 +1,6 @@
+{
+    "id": 10,
+    "title": "要素の定義",
+    "theme": "クラス図",
+    "uml": "@startuml\nabstract abstract\nabstract class \"abstract class\"\nannotation annotation\ncircle circle\n() circle_short_form\nclass class\ndiamond diamond\n<> diamond_short_form\nentity entity\nenum enum\ninterface interface\n@enduml"
+}

@@ -1,0 +1,6 @@
+{
+    "id": 11,
+    "title": "名前空間",
+    "theme": "クラス図",
+    "uml": "@startuml\nclass BaseClass\nnamespace net.dummy #DDDDDD {\n.BaseClass <|-- Person\nMeeting o-- Person\n.BaseClass <|- Meeting\n}\nnamespace net.foo {\nnet.dummy.Person <|- Person\n.BaseClass <|-- Person\nnet.dummy.Meeting o-- Person\n}\nBaseClass <|-- net.unused.Person\n@enduml"
+}

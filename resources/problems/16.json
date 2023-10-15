@@ -1,0 +1,6 @@
+{
+    "id": 16,
+    "title": "要素の宣言",
+    "theme": "配置図",
+    "uml": "@startuml\nactor アクター\nactor/ \"アクター/\"\nagent エージェント\nartifact アーティファクト\nboundary 境界\ncard カード\ncircle 円\ncloud クラウド\ncollections コレクション\ncomponent コンポーネント\ncontrol コントロール\ndatabase データベース\nentity エンティティ\nfile ファイル\nfolder フォルダ\nframe フレーム\nhexagon 六角形\ninterface インターフェイス\nlabel ラベル\nnode ノード\npackage パッケージ\nqueue キュー\nrectangle 四角形\nstack スタック\nstorage ストレージ\nusecase ユースケース\nusecase/ \"ユースケース/\"\n@enduml"
+}
